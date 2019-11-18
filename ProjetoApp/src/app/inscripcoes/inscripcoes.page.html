@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>inscripcoes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="formSubmit()">
+   <ion-item>
+    <ion-label>Nome:</ion-label>
+    <ion-input [(ngModel)]="dadosPessoa.nome" name="nome" required></ion-input>
+   </ion-item>
+ 		<ion-item>
+ 			<ion-label>Sobrenome:</ion-label>
+ 			<ion-input [(ngModel)]="dadosPessoa.sobrenome" name="sobrenome" required></ion-input>
+ 		</ion-item>
+ 		<ion-item>
+ 			<ion-label>Curso:</ion-label>
+ 			<ion-input [(ngModel)]="dadosPessoa.curso" name="curso" required></ion-input>
+ 		</ion-item>
+ 		<ion-item>
+ 			<ion-label>Periodo:</ion-label>
+ 			<ion-input [(ngModel)]="dadosPessoa.periodo" name="periodo" required></ion-input>
+ 		</ion-item>
+ 		<ion-item>
+ 			<ion-label>E-mail:</ion-label>
+ 			<ion-input type="text" [(ngModel)]="dadosPessoa.email" name="email" required></ion-input>
+ 		</ion-item>
+ 		<ion-button type="submit" expand="block">Registrar</ion-button>
+ 	</form>
+
+</ion-content>
