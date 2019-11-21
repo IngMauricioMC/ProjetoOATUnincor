@@ -1,19 +1,22 @@
 body, html{
  height: 100%;
 }
+
 #container{
-	border: 1px solid #79AB9A;
+	border: 1px solid #63AD93;
  display: grid;
- grid-template-rows: auto 15% auto auto;
+ grid-template-rows: auto;
  padding: 5px;
  margin: 4px;
 }
+
 #header{
-	border: 1px solid #366EFF;
+	border: 1px solid #63AD93;
 	text-align: center;
- background-color: #C9F7E7;
+ background-color: #A7FADD;
+ color: #AD6351;
  display: grid;
- grid-template-columns: 10% 65% 10%;
+ grid-template-columns: 35% 30% 35%;
  padding: 1%;
  align-items: center;
 }
@@ -25,39 +28,59 @@ body, html{
  width: 300px;
  height: auto;
 }
+
 #menu{
-	border: 1px solid #000;
- list-style: none;
+	border: 1px solid #63AD93;
+ background-color: #C9F7E7;
 }
 #menu ul{
 	list-style: none;
+ display: flex;
 }
-#content{
-	border: 1px solid #FF4933;
- display: grid;
- grid-template-columns: 85% 15%;
+#menu ul li{
+ border: 1px solid #63AD93;
+ color: #AB7568;
  padding: 5px;
+ margin: 2px;
+}
 
+#content{
+	/* border: 1px solid #63AD93; */
+ display: grid;
+ grid-template-columns: 90% 10%;
+ padding: 5px;
 }
 #content #context{
-	border: 1px solid #FF4933;
+	/* border: 1px solid #FF4933; */
+ text-align: center;
+ margin: 3px;
 }
-#content #context h1{
-	text-align: center;
+h2{
+ color: #C10900;
 }
-
+#content #menuLat{
+	border: 1px solid #63AD93;
+ /* list-style: none; */
+ display: block;
+}
 #containerExp{
- border: 1px solid #FF4933;
+ /* border: 1px solid #FF4933; */
  align-items: center;
  margin: 5px;
  padding: 10px;
 }
-
-#content #menuLat{
-	border: 1px solid #FF4933;
- list-style: none;
+#containerExpInt{
+ display: grid;
+ grid-template-columns: auto;
+ padding: 5px;
 }
+#formInscrip{
+ align-items: center;
+}
+
 #footer{
-	border: 1px solid #33ECFF;
+	border: 1px solid #63AD93;
+ background-color: #A7FADD;
 	text-align: center;
+ margin: 3px;
 }
