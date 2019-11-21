@@ -1,0 +1,63 @@
+body, html{
+ height: 100%;
+}
+#container{
+	border: 1px solid #79AB9A;
+ display: grid;
+ grid-template-rows: auto 15% auto auto;
+ padding: 5px;
+ margin: 4px;
+}
+#header{
+	border: 1px solid #366EFF;
+	text-align: center;
+ background-color: #C9F7E7;
+ display: grid;
+ grid-template-columns: 10% 65% 10%;
+ padding: 1%;
+ align-items: center;
+}
+#imgPag{
+ width: 300px;
+ height: auto;
+}
+#imgLogo{
+ width: 300px;
+ height: auto;
+}
+#menu{
+	border: 1px solid #000;
+ list-style: none;
+}
+#menu ul{
+	list-style: none;
+}
+#content{
+	border: 1px solid #FF4933;
+ display: grid;
+ grid-template-columns: 85% 15%;
+ padding: 5px;
+
+}
+#content #context{
+	border: 1px solid #FF4933;
+}
+#content #context h1{
+	text-align: center;
+}
+
+#containerExp{
+ border: 1px solid #FF4933;
+ align-items: center;
+ margin: 5px;
+ padding: 10px;
+}
+
+#content #menuLat{
+	border: 1px solid #FF4933;
+ list-style: none;
+}
+#footer{
+	border: 1px solid #33ECFF;
+	text-align: center;
+}
