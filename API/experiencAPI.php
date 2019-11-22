@@ -1,6 +1,6 @@
 <?php
-
 function listarPeriodo(){
+  require_once("conexaoBd.php");
   $conexao = conectaBd();
   $sql = "SELECT * FROM periodo";
   $result = executarSQL($conexao, $sql);
@@ -9,14 +9,21 @@ function listarPeriodo(){
 }
 
 function listarCurso(){
+  require_once("conexaoBd.php");
   $conexao = conectaBd();
   $sql = "SELECT * FROM curso";
   $result = executarSQL($conexao, $sql);
   $resposta = array("Curso" => array());
+  if ($result) {
+   while ($row = $result->fetch_assoc()) {
+   	$resposta["Curso"][] = $row;
+  	}
+  }
   echo json_encode($resposta);
- }
+}
 
 function listarExp(){
+  require_once("conexaoBd.php");
   $conexao = conectaBd();
   $sql = "SELECT * FROM experiencias";
   $result = executarSQL($conexao, $sql);
@@ -115,7 +122,7 @@ function listarExp(){
 //   }
 // }
 
-// $acao = $_GET["acao"];
+$acao = $_GET["acao"];
 
 if($acao == 'listarCurso'){
  listarCurso();

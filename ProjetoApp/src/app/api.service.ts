@@ -12,6 +12,10 @@ export class ApiService {
     return this.httpClient.get(`https://swapi.co/api/people/?format=json`);
   }
 
+  getDataCurso(page){
+   return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?acao=listarCurso';)
+  }
+
   sendPostRequest(postData){
 
     const httpOpitions = {

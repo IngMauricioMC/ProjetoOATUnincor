@@ -1,5 +1,5 @@
 <?php
-  require_once("config/conexaoBd.php");
+  require_once("../API/conexaoBd.php");
   $conexao = conectaBd();
   // require_once("config/config_geral.php");
   $pagina = 'inicio';
@@ -45,8 +45,19 @@
 
     <div id="context">
      <?php
-      include("paginas/".$pagina.".php");
+      // include("paginas/".$pagina.".php");
+      $sql = "SELECT * FROM curso";
+    		$result = executarSQL($conexao, $sql);
+    		if ($result) {
+    		    while ($row = $result->fetch_object()) {
      ?>
+     <p><?= $row->nome ?></p>
+     <?php
+          }
+          $result->close();
+      }
+     ?>
+
     </div>
 
     <div id="menuLat">
