@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-intercambio-inter',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntercambioInterPage implements OnInit {
 
-  constructor() { }
+  public conv: any;
+
+  constructor(private apiService: ApiService) {
+   this.apiService.getConvenio().subscribe((data:any)=>{
+    this.conv = data.convenios;
+    console.log(this.conv);
+   });
+  }
 
   ngOnInit() {
   }

@@ -1,7 +1,7 @@
 <?php
 require_once("conexaoBd.php");
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, UPDATE, PUT');
+header('Access-Control-Allow-Methods: GET, POST, UPDATE, DELETE');
 header('Access-Control-Allow-Headers: *');
 
 function listarPeriodo(){
@@ -34,13 +34,13 @@ function listarExp(){
   $conexao = conectaBd();
   $sql = "SELECT * FROM intercambios";
   $result = executarSQL($conexao, $sql);
-  $resposta = array("exp" => array());
+  $res = array("inter" => array());
   if ($result) {
    while ($row = $result->fetch_assoc()) {
-    $resposta["exp"][] = $row;
+    $res["inter"][] = $row;
    }
   }
-  echo json_encode($resposta);
+  echo json_encode($res);
 }
 
 
@@ -135,15 +135,17 @@ function eliminarAlunoPorId($id){
  }
 }
 
-function eliminarConvenioPorId($id){
- $conexao = conectaBd();
- $sql = "DELETE FROM convenios WHERE id = $id";
- $result = executar_sql($conexao, $sql);
- if ($result) {
-  echo json_encode(array('code' => 1, 'msg' => 'Produto excluído com sucesso!'));
- }else{
-  echo json_encode(array('code' => 0, 'msg' => 'Erro!'));
- }
+function eliminarConvenioPorId($input){
+ //$dados = json_decode(json_encode($input), true);
+ echo($input);
+ // $conexao = conectaBd();
+ // $sql = "DELETE FROM convenios WHERE id = $id";
+ // $result = executar_sql($conexao, $sql);
+ // if ($result) {
+ //  echo json_encode(array('code' => 1, 'msg' => 'Produto excluído com sucesso!'));
+ // }else{
+ //  echo json_encode(array('code' => 0, 'msg' => 'Erro!'));
+ // }
 }
 
 function eliminarExperienciaPorId($id){
@@ -236,7 +238,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
   if($acao == 'listarPeriodo'){
    listarPeriodo();
   }
-  if ($acao == 'exper') {
+  if ($acao == 'intercambios') {
    listarExp();
   }elseif ($acao == 'convenio') {
    listarConv();

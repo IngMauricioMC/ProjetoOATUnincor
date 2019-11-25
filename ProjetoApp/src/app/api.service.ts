@@ -15,7 +15,10 @@ export class ApiService {
    return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?acao=listarPeriodo');
   }
   getExper(){
-   return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?acao=exper');
+   return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?acao=intercambios');
+  }
+  getConvenio(){
+   return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?acao=convenio');
   }
   login(username){
    console.log(username);
@@ -30,7 +33,7 @@ export class ApiService {
           'Content-Type': 'application/json'
         })
     };
-   return this.httpClient.post('http://localhost:1996/API/experiencAPI.php?acao=inscripcaoInterc', postData, httpOptions)
+   return this.httpClient.post('http://localhost:1996/API/experiencAPI.php?acao=inscripcaoInterc', postData, httpOptions);
   }
   postNovaExp(postData){
    console.log(postData.nome+"-"+postData.curso);
@@ -40,6 +43,17 @@ export class ApiService {
           'Content-Type': 'application/json'
         })
     };
-   return this.httpClient.post('http://localhost:1996/API/experiencAPI.php?acao=novaExp', postData, httpOptions)
+   return this.httpClient.post('http://localhost:1996/API/experiencAPI.php?acao=novaExp', postData, httpOptions);
+  }
+
+  deleteConv(postData){
+   const httpOptions = {
+      headers: new HttpHeaders({
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'ok': true
+        })
+    };
+    return this.httpClient.delete(`http://localhost:1996/API/experiencAPI.php?acao=convenios`, postData, httpOptions);
   }
 }

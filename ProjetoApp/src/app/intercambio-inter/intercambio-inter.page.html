@@ -9,14 +9,14 @@
 
 <ion-content>
 
- <ion-card  class="ion-align-items-center">
+ <ion-card  class="ion-align-items-center" *ngFor="let convenio of conv">
   <ion-card-header>
-    <ion-card-title>Pais</ion-card-title>
-    <img src="http://localhost:1996/API/img/xperienciasInterc.jpeg" alt="" />
-    <ion-card-subtitle>Universidad</ion-card-subtitle>
+    <ion-card-title>{{convenio.pais}}</ion-card-title>
+    <img src="http://localhost:1996/API/img/{{convenio.foto}}" alt="" />
+    <ion-card-subtitle>{{convenio.universidade}}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    <p>Info...</p>
+    <p><a href="{{convenio.link}}">Link</a></p>
   </ion-card-content>
  </ion-card>
 
@@ -25,12 +25,5 @@
       <ion-icon name="undo"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
-    <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more data...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
 
 </ion-content>

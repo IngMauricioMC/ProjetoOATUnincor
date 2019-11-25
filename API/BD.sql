@@ -44,7 +44,7 @@ CREATE TABLE convenios(
 ALTER TABLE convenios ADD CONSTRAINT pk_Convenio PRIMARY KEY(id);
 ALTER TABLE convenios MODIFY id int auto_increment;
 
-CREATE TABLE experiencias(
+CREATE TABLE intercambios(
  id int,
  author varchar(50) NOT NULL,
  exper varchar(300) NOT NULL,
@@ -53,8 +53,8 @@ CREATE TABLE experiencias(
  foto varchar(50) NOT NULL
 );
 
-ALTER TABLE experiencias ADD CONSTRAINT pk_Experiencia PRIMARY KEY(id);
-ALTER TABLE experiencias MODIFY id int auto_increment;
+ALTER TABLE intercambios ADD CONSTRAINT pk_Experiencia PRIMARY KEY(id);
+ALTER TABLE intercambios MODIFY id int auto_increment;
 
 CREATE TABLE user(
  id int,
