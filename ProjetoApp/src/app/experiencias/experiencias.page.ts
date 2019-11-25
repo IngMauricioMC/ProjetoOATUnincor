@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-experiencias',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienciasPage implements OnInit {
 
-  constructor() { }
+  public exp: any;
+
+  constructor(private apiService: ApiService) {
+   this.apiService.getExper().then(data => {
+    this.exp = data;
+    console.log(this.exp);
+   });
+  }
 
   ngOnInit() {
   }

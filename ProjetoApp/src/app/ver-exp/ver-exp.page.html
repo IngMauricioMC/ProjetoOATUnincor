@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>EXPERIENCIAS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="title">EXPERIENCIAS</h1>
+  <ion-card>
+  <ion-card-header class="ion-align-items-center" *ngFor="let exp of exp">
+     <ion-card-title>Intercâmbio {{ exp.pais }} {{ exp.ano }}</ion-card-title>
+     <img src="http://localhost:1996/API/img/{{exp.foto}}" alt="" />
+     <ion-card-subtitle>{{ exp.author }}</ion-card-subtitle>
+   </ion-card-header>
+   <ion-card-content>
+     <p>{{ exp.exper }}</p>
+     <button io-button shape="round"click="">Editar</button>
+     <button io-button shape="round"click="">Apagar</button>
+   </ion-card-content>
+  </ion-card>
+
+  <ion-button io-button shape="round" href="/nova-exp" large>Nova Experiencia...</ion-button>
+</ion-content>

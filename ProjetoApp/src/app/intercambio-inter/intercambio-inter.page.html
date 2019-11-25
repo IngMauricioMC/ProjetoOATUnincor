@@ -12,7 +12,7 @@
  <ion-card  class="ion-align-items-center">
   <ion-card-header>
     <ion-card-title>Pais</ion-card-title>
-    <img src="/assets/experienciasInterc.jpeg" alt="" />
+    <img src="http://localhost:1996/API/img/xperienciasInterc.jpeg" alt="" />
     <ion-card-subtitle>Universidad</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
@@ -25,5 +25,12 @@
       <ion-icon name="undo"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

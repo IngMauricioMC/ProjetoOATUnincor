@@ -9,7 +9,7 @@
 
 <ion-content>
 
-  <form (ngSubmit)="formSubmit()">
+  <form (ngSubmit)="formSubmit()" method="POST" enctype="multipart/form-data">
    <ion-item>
     <ion-label>Nome:</ion-label>
     <ion-input [(ngModel)]="dadosPessoa.nome" name="nome" required></ion-input>
@@ -19,17 +19,24 @@
  			<ion-input [(ngModel)]="dadosPessoa.sobrenome" name="sobrenome" required></ion-input>
  		</ion-item>
  		<ion-item>
- 			<ion-label>Curso:</ion-label>
- 			<ion-input [(ngModel)]="dadosPessoa.curso" name="curso" required></ion-input>
- 		</ion-item>
- 		<ion-item>
- 			<ion-label>Periodo:</ion-label>
- 			<ion-input [(ngModel)]="dadosPessoa.periodo" name="periodo" required></ion-input>
- 		</ion-item>
- 		<ion-item>
  			<ion-label>E-mail:</ion-label>
  			<ion-input type="text" [(ngModel)]="dadosPessoa.email" name="email" required></ion-input>
  		</ion-item>
+
+   <ion-item>
+    <ion-label>Curso:</ion-label>
+    <ion-select ok-text="Okay" [(ngModel)]="dadosPessoa.curso" name="curso" required>
+     <ion-select-option *ngFor="let post of curso" value="{{ post.id }}" [(ngModel)]="dadosPessoa.curso" name="curso">{{ post.nome }}</ion-select-option>
+    </ion-select>
+   </ion-item>
+
+   <ion-item>
+    <ion-label>Periodo:</ion-label>
+    <ion-select ok-text="Okay" [(ngModel)]="dadosPessoa.periodo" name="periodo" required>
+     <ion-select-option *ngFor="let post of periodo" value="{{ post.id }}">{{ post.nome }}</ion-select-option>
+    </ion-select>
+   </ion-item>
+
  		<ion-button type="submit" expand="block">Registrar</ion-button>
  	</form>
 

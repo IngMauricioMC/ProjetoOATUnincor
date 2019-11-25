@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>novaExp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <form (ngSubmit)="formSubmit()" method="POST" enctype="multipart/form-data">
+  <ion-item>
+   <ion-label>Autor:</ion-label>
+   <ion-input [(ngModel)]="dadosExp.author" name="author" required></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label>Experiencia:</ion-label>
+   <ion-input [(ngModel)]="dadosExp.exper" name="exper" required></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label>Ano:</ion-label>
+   <ion-input type="text" [(ngModel)]="dadosExp.ano" name="ano" required></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label>Pais:</ion-label>
+   <ion-input type="text" [(ngModel)]="dadosExp.pais" name="pais" required></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label>Foto:</ion-label>
+   <ion-input type="text" [(ngModel)]="dadosExp.foto" name="foto" required></ion-input>
+  </ion-item>
+
+  <ion-button type="submit" expand="block">Registrar</ion-button>
+ </form>
+
+</ion-content>

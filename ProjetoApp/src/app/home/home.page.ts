@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 
 export class HomePage {
 
-  constructor() {}
+ public imag: any;
+
+  constructor() {
+   this.imag = [1,3,6];
+  }
 
 }

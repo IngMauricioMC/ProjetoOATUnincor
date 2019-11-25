@@ -9,14 +9,14 @@
 
 <ion-content>
 
- <ion-card  class="ion-align-items-center">
+ <ion-card  class="ion-align-items-center" *ngFor="let exp of exp">
   <ion-card-header>
-    <ion-card-title>Intercâmbio Colombia 2018</ion-card-title>
-    <img src="/assets/experienciasInterc.jpeg" alt="" />
-    <ion-card-subtitle>nome</ion-card-subtitle>
+    <ion-card-title>Intercâmbio {{ exp.pais }} {{ exp.ano }}</ion-card-title>
+    <img src="http://localhost:1996/API/img/{{exp.foto}}" alt="" />
+    <ion-card-subtitle>{{ exp.author }}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+    <p>{{ exp.exper }}</p>
   </ion-card-content>
  </ion-card>
 

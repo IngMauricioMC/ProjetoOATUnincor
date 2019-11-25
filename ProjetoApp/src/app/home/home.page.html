@@ -10,13 +10,15 @@
 </ion-header>
 
 <ion-content>
-    <img src="/assets/LOGO-UNINCOR.png" alt="" />
+    <img src="http://localhost:1996/API/img/LOGO-UNINCOR.png" alt="" />
     <ion-card-header>
       <ion-card-title>Intercâmbio</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p>Explicar que es intercambio.</p>
+      <p>A Universidade Vale do Rio Verde está em constante trabalho na busca de novos acordos com outras universidades, no Brasil e no mundo.</p>
+      <br>
+      <p>O ideal de motivar e apoiar intercâmbios acadêmicos é com o objetivo de que os alunos da Unincor possam conhecer novas culturas e novas pessoas, onde isso às vezes implica novos desafios, como aprender outro idioma; mas também motivamos a troca, porque sabemos que isso os tornará melhores profissionais.</p>
     </ion-card-content>
 
     <ion-card  class="ion-align-items-center">
@@ -24,9 +26,14 @@
        <ion-card-subtitle>Experiências Intercâmbio</ion-card-subtitle>
        <ion-card-title></ion-card-title>
      </ion-card-header>
-     <img src="/assets/experienciasInterc.jpeg" alt="" />
+
+     <ion-slides>
+        <ion-slide><img id="imgExp" *ngFor="let imag of imag" src="http://localhost:1996/API/img/int{{imag}}.jpg"/></ion-slide>
+        <ion-slide><img id="imgExp" src="http://localhost:1996/API/img/experienciasInterc.jpeg" alt="" /></ion-slide>
+      </ion-slides>
+
      <ion-card-content>
-       <p>Hablar en general sobre las experiencias.</p>
+       <p>Convidamos você a aprender mais sobre cada uma das experiências de nossos alunos que deixaram o país com a modalidade de intercâmbio acadêmico.</p>
      </ion-card-content>
      <ion-button io-button shape="round" href="/experiencias" large>Conhece mais...</ion-button>
     </ion-card>

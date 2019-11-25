@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ApiService } from '../api.service';
-import { ToastController } from '@ionic/angular';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-inscripcoes',
@@ -11,27 +11,48 @@ import { ToastController } from '@ionic/angular';
 })
 export class InscripcoesPage implements OnInit {
 
+  public curso: any;
+  public periodo: any;
+
   dadosPessoa = {
-      email: '',
-      password: ''
+   nome: "",
+   sobrenome: "",
+   email: "",
+   curso: 0,
+   periodo: 0,
   }
 
-  constructor(private apiService : ApiService, private alertController: AlertController, private toastController: ToastController) { }
+  constructor(private apiService : ApiService, private alertController: AlertController, private route: ActivatedRoute, private router: Router) {
+
+   this.apiService.getCurso().subscribe((data:any)=>{
+    console.log(data);
+    this.curso = data.curso;
+   });
+
+   this.apiService.getPeriodo().subscribe((data:any)=>{
+    console.log(data);
+    this.periodo = data.periodo;
+   });
+
+   this.route.queryParams.subscribe(params => {
+     console.log(this.router.getCurrentNavigation().extras.state);
+     if (this.router.getCurrentNavigation().extras.state) {
+       this.dadosPessoa.nome = this.router.getCurrentNavigation().extras.state.dadosPessoaParams.nome;
+       this.dadosPessoa.sobrenome = this.router.getCurrentNavigation().extras.state.dadosPessoaParams.sobrenome;
+       this.dadosPessoa.email = this.router.getCurrentNavigation().extras.state.formDataParams.email;
+       this.dadosPessoa.curso = this.router.getCurrentNavigation().extras.state.formDataParams.curso;
+       this.dadosPessoa.periodo = this.router.getCurrentNavigation().extras.state.formDataParams.periodo;
+     }
+   });
+  }
 
   ngOnInit() {
   }
 
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
-      duration: 2000
-    });
-    toast.present();
-  }
-
   async formSubmit(){
-
-   await this.apiService.sendPostRequest(this.dadosPessoa).subscribe((data)=>{
+   console.log(this.dadosPessoa.nome+"-"+this.dadosPessoa.sobrenome+"-"+this.dadosPessoa.curso+"-"+this.dadosPessoa.periodo);
+   console.log(this.dadosPessoa);
+   await this.apiService.postCadastroAluno(this.dadosPessoa).subscribe((data)=>{
      console.log(data);
    }, error => {
      console.log(error);

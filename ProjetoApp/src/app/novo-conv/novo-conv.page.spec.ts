@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IntercambioNacPage } from './intercambio-nac.page';
+import { NovoConvPage } from './novo-conv.page';
 
-describe('IntercambioNacPage', () => {
-  let component: IntercambioNacPage;
-  let fixture: ComponentFixture<IntercambioNacPage>;
+describe('NovoConvPage', () => {
+  let component: NovoConvPage;
+  let fixture: ComponentFixture<NovoConvPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntercambioNacPage ],
+      declarations: [ NovoConvPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IntercambioNacPage);
+    fixture = TestBed.createComponent(NovoConvPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

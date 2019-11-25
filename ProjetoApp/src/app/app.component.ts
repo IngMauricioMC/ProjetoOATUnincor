@@ -27,8 +27,13 @@ export class AppComponent {
       icon: 'paper'
     },
     {
-      title: 'Contacte-nos',
+      title: 'Contato',
       url: '/about',
+      icon: 'contact'
+    },
+    {
+      title: 'Login',
+      url: '/login',
       icon: 'contact'
     },
   ];
