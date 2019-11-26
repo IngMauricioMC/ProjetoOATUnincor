@@ -29,7 +29,7 @@ export class AppComponent {
     {
       title: 'Contato',
       url: '/about',
-      icon: 'contact'
+      icon: 'call'
     },
     {
       title: 'Login',

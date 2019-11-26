@@ -6,20 +6,23 @@
 
 <ion-content>
  <h1 class="title">EXPERIENCIAS</h1>
+ <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+   <ion-fab-button href="/nova-exp">
+     <ion-icon name="add"></ion-icon>
+   </ion-fab-button>
+ </ion-fab>
  <ion-card>
- <ion-card-header class="ion-center-content-around" *ngFor="let exp of exp">
+  <ion-card-header class="ion-center-content-around" *ngFor="let exp of exp">
     <ion-card-title>Intercâmbio {{ exp.pais }} {{ exp.ano }}</ion-card-title>
     <img src="http://localhost:1996/API/img/{{exp.foto}}" alt="" />
     <ion-card-subtitle>{{ exp.author }}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
     <p>{{ exp.exper }}</p>
-    <ion-button io-button shape="round"click="" color="success" large>Editar</ion-button>
-    <ion-button io-button shape="round"click=""  color="danger" large>Apagar</ion-button>
   </ion-card-content>
+  <ion-button io-button shape="round"click="" color="success" large>Editar</ion-button>
+  <ion-button io-button shape="round"click=""  color="danger" large>Apagar</ion-button>
  </ion-card>
-
- <ion-button io-button shape="round" href="/nova-exp" large>Nova Experiencia...</ion-button>
 
  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
    <ion-fab-button color="light" href="/pag-admin">

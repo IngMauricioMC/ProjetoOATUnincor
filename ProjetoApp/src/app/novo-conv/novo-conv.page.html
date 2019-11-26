@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>novoConv</ion-title>
+    <ion-title>Novo Convenio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+ <form (ngSubmit)="formSubmit()" method="POST" enctype="multipart/form-data">
+  <ion-item>
+   <ion-label color="primary">Universidade:</ion-label>
+   <ion-input [(ngModel)]="dadosConv.universidade" name="universidade" required></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label color="primary">Foto:</ion-label>
+   <ion-input [(ngModel)]="dadosConv.foto" name="exper" required></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label color="primary">Link:</ion-label>
+   <ion-input type="text" [(ngModel)]="dadosConv.link" name="link" required></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label color="primary">Pais:</ion-label>
+   <ion-input type="text" [(ngModel)]="dadosConv.pais" name="pais" required></ion-input>
+  </ion-item>
+  <br>
+  <ion-button type="submit" shape="round" fill="outline" color="tertiary">Salvar</ion-button>
+  <ion-button href='/ver-conv' shape="round" color="danger" fill="outline">Cancelar</ion-button>
+ </form>
 
 </ion-content>

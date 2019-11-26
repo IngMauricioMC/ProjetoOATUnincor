@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'nova-exp', loadChildren: './nova-exp/nova-exp.module#NovaExpPageModule' },
   { path: 'ver-exp', loadChildren: './ver-exp/ver-exp.module#VerExpPageModule' },
   { path: 'ver-conv', loadChildren: './ver-conv/ver-conv.module#VerConvPageModule' },
-  { path: 'novo-conv', loadChildren: './novo-conv/novo-conv.module#NovoConvPageModule' }
+  { path: 'novo-conv', loadChildren: './novo-conv/novo-conv.module#NovoConvPageModule' },
+  { path: 'ver-inscipcoes', loadChildren: './ver-inscipcoes/ver-inscipcoes.module#VerInscipcoesPageModule' }
 ];
 
 @NgModule({

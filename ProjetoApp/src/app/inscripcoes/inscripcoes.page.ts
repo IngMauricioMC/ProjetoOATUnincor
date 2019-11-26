@@ -66,6 +66,8 @@ export class InscripcoesPage implements OnInit {
     });
 
     await alert.present();
+
+    this.router.navigate(["/home"]);
   }
 
 }

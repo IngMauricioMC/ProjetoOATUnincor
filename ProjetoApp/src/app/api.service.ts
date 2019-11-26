@@ -45,15 +45,30 @@ export class ApiService {
     };
    return this.httpClient.post('http://localhost:1996/API/experiencAPI.php?acao=novaExp', postData, httpOptions);
   }
-
-  deleteConv(postData){
+  postCadastroConv(postData){
    const httpOptions = {
       headers: new HttpHeaders({
           'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'ok': true
+          'Content-Type': 'application/json'
         })
     };
-    return this.httpClient.delete(`http://localhost:1996/API/experiencAPI.php?acao=convenios`, postData, httpOptions);
+   return this.httpClient.post('http://localhost:1996/API/experiencAPI.php?acao=novoConv', postData, httpOptions);
+  }
+
+  editConvenio(postData){
+   console.log("ApiService:");
+   console.log(postData);
+   const httpOptions = {
+      headers: new HttpHeaders({
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        })
+    };
+   return this.httpClient.put('http://localhost:1996/API/experiencAPI.php?acao=editConvenios', postData, httpOptions);
+  }
+
+  deleteConv(postData){
+    console.log(postData);
+    return this.httpClient.delete(`http://localhost:1996/API/experiencAPI.php?acao=deleteconvenio`, postData);
   }
 }

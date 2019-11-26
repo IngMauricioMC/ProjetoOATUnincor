@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>INSCRIPCOES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <h1 class="title">INSCRIPCOES ALUNOS</h1>
+ <ion-card  class="ion-center-content-around" *ngFor="let insc of insc">
+  <ion-label color="primary">Nome:</ion-label>
+  <ion-input [(ngModel)]="dadosPessoa.nome" name="nome" required></ion-input>
+  <ion-label color="primary">Sobrenome:</ion-label>
+  <ion-input [(ngModel)]="dadosPessoa.sobrenome" name="sobrenome" required></ion-input>
+  <ion-label color="primary">E-mail:</ion-label>
+  <ion-input type="text" [(ngModel)]="dadosPessoa.email" name="email" required></ion-input>
+  <ion-label color="primary">Curso:</ion-label>
+  <ion-input type="text" [(ngModel)]="dadosPessoa.email" name="email" required></ion-input>
+  <ion-label color="primary">Periodo:</ion-label>
+  <ion-input type="text" [(ngModel)]="dadosPessoa.email" name="email" required></ion-input>
+  <ion-button io-button shape="round" (click)="deleteConv(convenio)" color="danger" large>Apagar</ion-button>
+ </ion-card>
+ <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+   <ion-fab-button color="light" href="/pag-admin">
+     <ion-icon name="undo"></ion-icon>
+   </ion-fab-button>
+ </ion-fab>
+</ion-content>
