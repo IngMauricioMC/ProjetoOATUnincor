@@ -15,21 +15,4 @@
   return $result_query;
  }
 
-//Obtener parametros para Update
- function getParams($dados){
-  $filterDados = [];
-  foreach ($dados as $param => $value) {
-    $filterDados[] = "$param=:$param";
-  }
-  return implode(", ",$filterDados);
- }
-
-//Asociar todos los parametros a un sql
-function binAllValues($statement, $params){
- foreach ($params as $param => $value) {
-  $statement->bindValue(":".$param, $value);
- }
- return $statement;
-}
-
 ?>

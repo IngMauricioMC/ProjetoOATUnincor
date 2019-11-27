@@ -63,7 +63,7 @@ export class NovoConvPage implements OnInit {
 
     await alert.present();
 
-    this.router.navigate(["/ver-conv"]);
+    this.router.navigate(["/pag-admin"]);
 
   }
 

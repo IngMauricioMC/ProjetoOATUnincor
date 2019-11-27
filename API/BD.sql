@@ -47,7 +47,7 @@ ALTER TABLE convenios MODIFY id int auto_increment;
 CREATE TABLE intercambios(
  id int,
  author varchar(50) NOT NULL,
- exper varchar(300) NOT NULL,
+ exper varchar(50) NOT NULL,
  ano varchar(10) NOT NULL,
  pais varchar(30) NOT NULL,
  foto varchar(50) NOT NULL
@@ -84,6 +84,10 @@ INSERT INTO periodo(nome) VALUES ("7");
 INSERT INTO periodo(nome) VALUES ("8");
 INSERT INTO periodo(nome) VALUES ("9");
 INSERT INTO periodo(nome) VALUES ("10");
+
+INSERT INTO intercambios(author, exper, ano, pais, foto) VALUES ('Marine',  'Cultura', '2019', 'Argentina', 'marine3.jpg');
+INSERT INTO intercambios(author, exper, ano, pais, foto) VALUES ('Aline',  'Experiencia', '2018', 'Colombia', 'aline.png');
+INSERT INTO intercambios(author, exper, ano, pais, foto) VALUES ('Beatriz',  'Amizade', '2019', 'Argentina', 'beatriz.jpg');
 
 INSERT INTO convenios(universidade, foto, link, pais) VALUES ("UNIVERSIDAD CONGRESO", "U_Congreso.jpg", "http://www.ucongreso.edu.ar/", "Argentina");
 INSERT INTO convenios(universidade, foto, link, pais) VALUES ("UNIVERSIDAD DE BOYACA", "Uniboyaca.jpeg", "https://www.uniboyaca.edu.co/", "Colombia");

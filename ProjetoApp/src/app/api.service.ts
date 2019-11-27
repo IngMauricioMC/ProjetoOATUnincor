@@ -20,6 +20,9 @@ export class ApiService {
   getConvenio(){
    return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?acao=convenio');
   }
+  getInscripcao(){
+   return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?acao=inscripcao');
+  }
   login(username){
    console.log(username);
    return this.httpClient.get('http://localhost:1996/API/experiencAPI.php?login='+username);
@@ -56,8 +59,6 @@ export class ApiService {
   }
 
   editConvenio(postData){
-   console.log("ApiService:");
-   console.log(postData);
    const httpOptions = {
       headers: new HttpHeaders({
           'Accept': 'application/json',
@@ -68,7 +69,22 @@ export class ApiService {
   }
 
   deleteConv(postData){
-    console.log(postData);
-    return this.httpClient.delete(`http://localhost:1996/API/experiencAPI.php?acao=deleteconvenio`, postData);
+   const httpOptions = {
+      headers: new HttpHeaders({
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        })
+    };
+    return this.httpClient.post(`http://localhost:1996/API/experiencAPI.php?acao=deleteConvenio`, postData, httpOptions);
   }
+  deleteInsc(postData){
+   const httpOptions = {
+      headers: new HttpHeaders({
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        })
+    };
+    return this.httpClient.post(`http://localhost:1996/API/experiencAPI.php?acao=deleteAluno`, postData, httpOptions);
+  }
+
 }

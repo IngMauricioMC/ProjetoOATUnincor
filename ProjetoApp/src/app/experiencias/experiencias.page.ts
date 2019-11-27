@@ -12,7 +12,7 @@ export class ExperienciasPage implements OnInit {
 
   constructor(private apiService: ApiService) {
    this.apiService.getExper().subscribe((data:any)=>{
-    this.exp = data.exper;
+    this.exp = data.intercambios;
     console.log(this.exp);
    });
   }

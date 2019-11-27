@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AlertController } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
@@ -32,8 +32,8 @@ export class VerConvPage implements OnInit {
   }
 
   async deleteConv(convenio) {
-   console.log(convenio)
-   await this.apiService.deleteConv(convenio).subscribe((data)=>{
+   console.log(convenio.id)
+   await this.apiService.deleteConv(convenio.id).subscribe((data)=>{
      console.log(data);
      let index = this.conv.indexOf(convenio);
      this.conv.splice(index, 1);
