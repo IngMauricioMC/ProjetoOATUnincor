@@ -1,0 +1,4 @@
+Para iniciar qualquer projeto voce precisa de:
+1. Voce esta na pasta raiz e execute na terminal, para iniciar API: php -S localhost:1996
+2. Voce esta na pasta ProjetoApp e execute na terminal, para iniciar Ionic: ionic serve --lab
+3. Voce esta na pasta ProjetoWeb e execute na terminal, para iniciar projeto em PHP: php -S localhost:2019, depois vc pode entrar em o navegador em http://localhost:2019/index.php
