@@ -17,6 +17,10 @@
   <title>INTERCAMBIO UNINCOR</title>
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
   <script rel="javascript" type="text/js" href="static/javascript.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/css/style1200.css" media="screen and (max-width:1200px)">
+	<link rel="stylesheet" type="text/css" href="static/css/style1024.css" media="screen and (max-width:1024px)">
+  <link rel="stylesheet" type="text/css" href="static/css/style600.css" media="screen and (max-width:600px)">
+	<link rel="stylesheet" type="text/css" href="static/css/style320.css" media="screen and (max-width:320px)">
  </head>
 
  <body>

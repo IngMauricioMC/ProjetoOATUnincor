@@ -14,7 +14,7 @@ if (isset($_POST['enviar'])) {
  <h2>BEM-VINDO!</h2>
  <h3>Admin</h3>
  <div id="optAdmin">
-  <form action="?pg=convAdm" method="post">
+  <form action="?pg=convAdmin" method="post">
    <button type="submit" name="button" onclick="?pg=home">CONVENIOS</button>
   </form>
   <br>

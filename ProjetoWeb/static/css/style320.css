@@ -1,0 +1,256 @@
+body, html{
+ height: 100%;
+}
+
+#container{
+	border: 1px solid #63AD93;
+ display: grid;
+ grid-template-rows: auto minmax(min-content,8%) auto 5%;
+ /* padding: 5px; */
+ /* margin: 4px; */
+}
+
+#header{
+	border: 1px solid #63AD93;
+	text-align: center;
+ background-color: #C9F7E7;
+ color: #AD6351;
+ display: grid;
+ grid-template-columns: 30% 40% 30%;
+ padding: 1%;
+ align-items: center;
+}
+#imgPag{
+ width: 80px;
+ height: auto;
+}
+#imgLogo{
+ width: 80px;
+ height: auto;
+}
+h1{
+  font-size: 10px;
+}
+
+#menu{
+	border: 1px solid #63AD93;
+ background-color: #A7FADD;
+ display: grid;
+ grid-template-columns: 68% 30%;
+}
+#menuIzq ul{
+	list-style: none;
+ display: flex;
+ justify-content: flex-start;
+}
+#menuIzq ul li{
+ /* border: 1px solid #63AD93; */
+ color: #AB7568;
+ padding: 5px;
+ margin: 2px;
+ background-color: #FFFFFF;
+}
+#menuDer ul{
+	list-style: none;
+ display: flex;
+ justify-content: flex-end;
+}
+#menuDer ul li{
+ /* border: 1px solid #63AD93; */
+ color: #AB7568;
+ padding: 5px;
+ margin: 2px;
+ background-color: #FFFFFF;
+}
+#imgMenu{
+ width: 30px;
+ height: auto;
+}
+
+#content{
+ padding: 5px;
+ text-align: center;
+ margin: 3px;
+}
+
+h2{
+  color: #1401FF;
+}
+h2{
+  color: #CC8A14;
+}
+
+#containerExp{      Home
+ border: 1px solid #FF4933;
+ align-items: center;
+ margin: 5px;
+ padding: 10px;
+}
+
+#containerExp{
+ display: grid;
+ grid-template-columns: auto;
+}
+#experiencia{
+ border: 1px solid #FF4933;
+ padding: 2%;
+ margin: 1% 40% 1% 40%;
+}
+#imgExp{
+ width: 200px;
+ height: auto;
+}
+
+#formInscrip{
+ align-items: center;
+}
+
+#convenios{
+	border: 1px solid #63AD93;
+  display: grid;
+  grid-template-rows: auto;
+}
+#convNac{
+  border: 1px solid #FF4933;
+  margin: 1%;
+  padding: 1%;
+}
+#convInt{
+  border: 1px solid #FF4933;
+  margin: 1%;
+  padding: 1%;
+}
+#universidadesInt{
+ border: 1px solid #FF4933;
+ padding: 2%;
+ margin: 1% 40% 1% 40%;
+}
+#imgConv{
+ width: 300px;
+ height: auto;
+}
+
+#inscripcao{
+ border: 1px solid #FF4933;
+ margin: 0% 30% 0% 30%;
+ padding: 1%;
+ text-align: center;
+}
+#curFor{
+ margin: 0px auto;
+}
+#perFor{
+ margin: 0px auto;
+}
+
+
+
+#menuLat{
+	border: 1px solid #63AD93;
+ /* list-style: none; */
+ display: block;
+}
+
+#footer{
+	border: 1px solid #63AD93;
+ background-color: #C9F7E7;
+	text-align: center;
+ margin: 3px;
+ color: #AD6351;
+}
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
