@@ -1,7 +1,8 @@
 <?php
-  require_once("../API/conexaoBd.php");
+  require_once("config/configGeral.php");
+  require_once("config/conexaoBd.php");
   $conexao = conectaBd();
-  // require_once("config/config_geral.php");
+
   $pagina = 'inicio';
   if(isset($_GET['pg'])){
     $pagina = $_GET['pg'];
@@ -15,6 +16,7 @@
   <meta charset="utf-8">
   <title>INTERCAMBIO UNINCOR</title>
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <script rel="javascript" type="text/js" href="static/javascript.js"></script>
  </head>
 
  <body>
@@ -22,55 +24,42 @@
 
    <div id="header">
     <div id="imgIzq">
-      <img id="imgPag" src="static/img/unincor.jpg">
+      <img id="imgPag" src='<?= $localhost.$img?>intercambios.jpg'>
     </div>
     <div id="titulo">
      <h1>INTERCAMBIO UNINCOR</h1>
     </div>
     <div id="imgDer">
-     <img id="imgLogo" src="static/img/logoUnincor.png">
+     <img id="imgLogo" src='<?=$localhost.$img?>LOGO-UNINCOR.png'>
     </div>
    </div>
 
    <div id="menu">
-    <ul>
-     <li class="<?= ($pagina == 'home')?'active':'' ?>"><a href="?pg=home">Home</a></li>
-     <li class="<?= ($pagina == 'convenios')?'active':'' ?>"><a href="?pg=convenios">Convenios</a></li>
-     <li class="<?= ($pagina == 'formulario')?'active':'' ?>"><a href="?pg=formulario">Inscripcoes</a></li>
-     <li class="<?= ($pagina == 'contacto')?'active':'' ?>"><a href="?pg=contacto">Contacto</a></li>
-    </ul>
+    <div id="menuIzq">
+     <ul>
+      <a href="?pg=home"><img id="imgMenu" src='<?=$localhost.$img?>iconoInicio1.png'></a>
+      <li class="<?= ($pagina == 'convenios')?'active':'' ?>"><a href="?pg=convenios">Convenios</a></li>
+      <li class="<?= ($pagina == 'formulario')?'active':'' ?>"><a href="?pg=formulario">Inscripcoes</a></li>
+      <li class="<?= ($pagina == 'contato')?'active':'' ?>"><a href="?pg=contato">Contacto</a></li>
+     </ul>
+    </div>
+    <div id="menuDer">
+     <ul>
+      <a href="?pg=login"><img id="imgMenu" src='<?=$localhost.$img?>login1.png'></a>
+     </ul>
+    </div>
    </div>
 
    <div id="content">
-
-    <div id="context">
-     <?php
-      // include("paginas/".$pagina.".php");
-      $sql = "SELECT * FROM curso";
-    		$result = executarSQL($conexao, $sql);
-    		if ($result) {
-    		    while ($row = $result->fetch_object()) {
-     ?>
-     <p><?= $row->nome ?></p>
-     <?php
-          }
-          $result->close();
-      }
-     ?>
-
-    </div>
-
-    <div id="menuLat">
-     <ul>
-      <center><button><a href="http://www.unincor.br/">Unincor</a></button></center>
-     </ul>
-    </div>
-
+    <?php
+     include("paginas/".$pagina.".php");
+    ?>
    </div>
 
    <footer>
     <div id="footer">
-     <label class="">UNINCOR</label>
+     <h2>@2019 - UNINCOR</h2>
+     <h3>@LuisMauricioMosqueraCifuentes</h3>
     </div>
    </footer>
 
