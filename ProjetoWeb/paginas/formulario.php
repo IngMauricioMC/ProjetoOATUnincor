@@ -13,7 +13,7 @@
      		if ($result) {
      		 while ($row = $result->fetch_object()) {
 		    	?>
-      <option name="curso" value='<?= $row->id ?>'><?= $row->nome ?></option>
+      <option id="curso" name="curso" value='<?= $row->id ?>'><?= $row->nome ?></option>
       <?php
         }
         $result->close();
@@ -31,7 +31,7 @@
      		if ($result) {
      		 while ($row = $result->fetch_object()) {
 		    ?>
-      <option name="periodo" value='<?= $row->id ?>'><?= $row->nome ?></option>
+      <option id="periodo" name="periodo" value='<?= $row->id ?>'><?= $row->nome ?></option>
       <?php
         }
         $result->close();
